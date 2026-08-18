@@ -17,21 +17,24 @@ public class WeaponController : MonoBehaviour
 
     private void Update()
     {
-        attackTimer -= Time.deltaTime;
-
-        if (attackTimer <= 0f)
+        if (attackTimer > 0f)
         {
-            Attack();
+            attackTimer -= Time.deltaTime;
+            return;
+        }
+
+        if (Attack())
+        {
             attackTimer = attackCooldown;
         }
     }
 
-    private void Attack()
+    private bool Attack()
     {
         Transform target = targeting.GetNearestEnemy();
 
         if (target == null)
-            return;
+            return false;
 
         Vector3 direction = target.position - projectileSpawnPoint.position;
         direction.y = 0f;
@@ -43,5 +46,7 @@ public class WeaponController : MonoBehaviour
         );
 
         projectile.Initialize(direction);
+
+        return true;
     }
 }
