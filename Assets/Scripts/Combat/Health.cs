@@ -23,6 +23,8 @@ public class Health : MonoBehaviour
 
         CurrentHealth -= damage;
 
+        Debug.Log($"{name} took {damage} damage. HP: {CurrentHealth}");
+
         if (CurrentHealth <= 0f)
         {
             CurrentHealth = 0f;
