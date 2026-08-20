@@ -17,7 +17,10 @@ public class Projectile : MonoBehaviour
 
     public void Initialize(Vector3 direction)
     {
-        rb.linearVelocity = direction.normalized * speed;
+        hasHit = false;
+
+        rb.linearVelocity =
+            direction.normalized * speed;
 
         Destroy(gameObject, lifetime);
     }
@@ -30,7 +33,8 @@ public class Projectile : MonoBehaviour
         if (!other.CompareTag("Enemy"))
             return;
 
-        Health health = other.GetComponent<Health>();
+        Health health =
+            other.GetComponentInParent<Health>();
 
         if (health == null)
             return;
