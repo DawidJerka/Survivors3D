@@ -7,18 +7,23 @@ public class MagicMissileWeapon : TimedWeapon
 
     private EnemyTargeting targeting;
 
+    private MagicMissileData magicMissileData;
+
     protected override void OnInitialized()
     {
-        targeting = GetComponentInParent<EnemyTargeting>();
+        magicMissileData = Data as MagicMissileData;
 
-        if (targeting == null)
+        if (magicMissileData == null)
         {
             Debug.LogError(
-                $"{nameof(MagicMissileWeapon)} requires " +
-                $"{nameof(EnemyTargeting)} on the Player.",
+                "MagicMissileWeapon requires MagicMissileData.",
                 this
             );
+
+            return;
         }
+
+        targeting = GetComponentInParent<EnemyTargeting>();
     }
 
     protected override bool Attack()
@@ -54,6 +59,6 @@ public class MagicMissileWeapon : TimedWeapon
 
     protected override float GetCooldown()
     {
-        return Data.GetCooldown(CurrentLevel);
+        return magicMissileData.GetCooldown(CurrentLevel);
     }
 }

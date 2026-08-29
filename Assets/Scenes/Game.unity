@@ -166,8 +166,8 @@ MonoBehaviour:
   playerExperience: {fileID: 2068709560}
   playerLoadout: {fileID: 2068709561}
   availableItems:
-  - {fileID: 11400000, guid: 1fd5e590916920b45b789eef5e8d5523, type: 2}
-  - {fileID: 11400000, guid: 779379ba37c0d594fa19fa5cfb8a6acf, type: 2}
+  - {fileID: 11400000, guid: 62e9b8f04ace62d4e8769eb2a5387f3d, type: 2}
+  - {fileID: 11400000, guid: 7e3567bc63d87b74baa194a4fb94ff47, type: 2}
   - {fileID: 11400000, guid: f1930d3d55743304b983922de4258c0f, type: 2}
   - {fileID: 11400000, guid: aeef8b485a774ea44b24dc19687c142a, type: 2}
   choicesCount: 3
@@ -1884,7 +1884,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!136 &2068709554
 CapsuleCollider:
@@ -1934,7 +1934,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 21cd9e6b3cf88ff478eac1b43aac6e09, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2023,7 +2023,7 @@ MonoBehaviour:
   maxWeapons: 6
   maxPassives: 6
   startingItems:
-  - {fileID: 11400000, guid: 1fd5e590916920b45b789eef5e8d5523, type: 2}
+  - {fileID: 11400000, guid: 7e3567bc63d87b74baa194a4fb94ff47, type: 2}
 --- !u!114 &2068709562
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2364fbde85f000f40837a3d51fb549c6, type: 3}
+  m_Name: OrbitingBladesData
+  m_EditorClassIdentifier: Assembly-CSharp::OrbitingBladesData
+  displayName: Orbiting Blades
+  icon: {fileID: 21300000, guid: 1fe92cdc749a78d408aaca2c750d3b83, type: 3}
+  maxLevel: 5
+  weaponPrefab: {fileID: 8721677747872675983, guid: 09af597bbf912a048bf5dcc090ec8d07, type: 3}
+  baseBladeCount: 2
+  bladesAddedPerLevel: 1
+  orbitRadius: 2.5
+  orbitHeight: 0.75
+  rotationSpeed: 120
+  damage: 20
