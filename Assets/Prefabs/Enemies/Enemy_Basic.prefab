@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 444605422215650778}
   - component: {fileID: 8708839058026066551}
   - component: {fileID: 5104800868699890407}
+  - component: {fileID: 4884193705229418475}
   m_Layer: 0
   m_Name: Enemy_Basic
   m_TagString: Enemy
@@ -186,6 +187,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDeath
   experienceGemPrefab: {fileID: 1263102358596331551, guid: 1fe87dcde970ce34ea59ba85f408c92b, type: 3}
   experienceDropPoint: {fileID: 3986624112794855760}
+--- !u!114 &4884193705229418475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2571686004122013693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 303e99c839f75bc49a5a61db388f8e9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1 &5294340318433485188
 GameObject:
   m_ObjectHideFlags: 0
