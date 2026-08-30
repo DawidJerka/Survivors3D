@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: MovementSpeed
   m_EditorClassIdentifier: Assembly-CSharp::MovementSpeedPassiveData
   displayName: Movement Speed
-  icon: {fileID: 21300000, guid: 1fe92cdc749a78d408aaca2c750d3b83, type: 3}
+  icon: {fileID: 21300000, guid: f90750385efbd2944af596ee73172f87, type: 3}
   maxLevel: 5
   increasePerLevel: 0.1
