@@ -5,8 +5,13 @@ public class Health : MonoBehaviour
 {
     [SerializeField] private float maxHealth = 100f;
 
+    private float maxHealthMultiplier = 1f;
+
     public float CurrentHealth { get; private set; }
-    public float MaxHealth => maxHealth;
+
+    public float MaxHealth =>
+        maxHealth * maxHealthMultiplier;
+
     public bool IsDead { get; private set; }
 
     public event Action<float, float> OnHealthChanged;
@@ -14,7 +19,7 @@ public class Health : MonoBehaviour
 
     private void Awake()
     {
-        CurrentHealth = maxHealth;
+        CurrentHealth = MaxHealth;
     }
 
     public void TakeDamage(float damage)
@@ -36,6 +41,33 @@ public class Health : MonoBehaviour
         {
             Die();
         }
+    }
+
+    public void SetMaxHealthMultiplier(float multiplier)
+    {
+        multiplier = Mathf.Max(multiplier, 0.01f);
+
+        float previousMaxHealth = MaxHealth;
+
+        maxHealthMultiplier = multiplier;
+
+        float newMaxHealth = MaxHealth;
+
+        if (newMaxHealth > previousMaxHealth)
+        {
+            CurrentHealth +=
+                newMaxHealth - previousMaxHealth;
+        }
+        else
+        {
+            CurrentHealth =
+                Mathf.Min(CurrentHealth, newMaxHealth);
+        }
+
+        OnHealthChanged?.Invoke(
+            CurrentHealth,
+            MaxHealth
+        );
     }
 
     private void Die()
