@@ -7,11 +7,17 @@ public class EnemyContactDamage : MonoBehaviour
     private void OnCollisionStay(Collision collision)
     {
         PlayerDamageReceiver player =
-            collision.collider.GetComponentInParent<PlayerDamageReceiver>();
+            collision.collider
+                .GetComponentInParent<PlayerDamageReceiver>();
 
         if (player == null)
             return;
 
         player.TryTakeDamage(damage);
+    }
+
+    public void SetDamage(float value)
+    {
+        damage = Mathf.Max(0f, value);
     }
 }

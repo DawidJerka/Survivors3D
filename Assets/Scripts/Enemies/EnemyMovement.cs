@@ -40,4 +40,9 @@ public class EnemyMovement : MonoBehaviour
             velocity.z
         );
     }
+
+    public void SetMoveSpeed(float speed)
+    {
+        moveSpeed = Mathf.Max(0f, speed);
+    }
 }

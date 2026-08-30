@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 4884193705229418475}
   - component: {fileID: 7804398846984799226}
   m_Layer: 0
-  m_Name: Enemy_Basic
+  m_Name: Enemy_Runner
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,7 +74,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 92e195e561579c944b88b97162c31389, type: 2}
+  - {fileID: 2100000, guid: d1bdd9a6cd10fc84a93808c59ef42ee2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -213,7 +213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee81aaa3cef7f0e449e2e8d4abc928d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyInitializer
-  enemyData: {fileID: 11400000, guid: f07c83958971ad04b93fc66e13e366d0, type: 2}
+  enemyData: {fileID: 11400000, guid: dc1fcebd36d326144b8581408d1ee7cb, type: 2}
 --- !u!1 &5294340318433485188
 GameObject:
   m_ObjectHideFlags: 0

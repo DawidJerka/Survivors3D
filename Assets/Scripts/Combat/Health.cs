@@ -70,6 +70,28 @@ public class Health : MonoBehaviour
         );
     }
 
+    public void SetBaseMaxHealth(
+    float value,
+    bool healToFull = true)
+    {
+        maxHealth = Mathf.Max(1f, value);
+
+        if (healToFull)
+        {
+            CurrentHealth = MaxHealth;
+        }
+        else
+        {
+            CurrentHealth =
+                Mathf.Min(CurrentHealth, MaxHealth);
+        }
+
+        OnHealthChanged?.Invoke(
+            CurrentHealth,
+            MaxHealth
+        );
+    }
+
     private void Die()
     {
         if (IsDead)
