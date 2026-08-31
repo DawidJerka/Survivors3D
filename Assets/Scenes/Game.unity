@@ -5752,9 +5752,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAnimation
   movementThreshold: 0.1
-  referenceRunSpeed: 6.25
+  referenceRunSpeed: 6.5
   minRunAnimationSpeed: 0.6
   maxRunAnimationSpeed: 1.8
+--- !u!114 &1265256685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1265256675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52da75b5090ef2d409d15e1885113c33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimationFootstepEvents
+  audioSource: {fileID: 0}
+  footstepClips: []
+  footstepVolume: 0.5
 --- !u!1 &1267850846
 GameObject:
   m_ObjectHideFlags: 0
@@ -7748,6 +7763,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3862277631971027947, guid: 7ae956b4f54394e80818898d8f4d30c6, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1265256683}
+    - targetCorrespondingSourceObject: {fileID: 3862277631971027947, guid: 7ae956b4f54394e80818898d8f4d30c6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1265256685}
   m_SourcePrefab: {fileID: 100100000, guid: 7ae956b4f54394e80818898d8f4d30c6, type: 3}
 --- !u!1 &1724529585
 GameObject:
@@ -9162,6 +9180,7 @@ GameObject:
   - component: {fileID: 2068709561}
   - component: {fileID: 2068709562}
   - component: {fileID: 2068709563}
+  - component: {fileID: 2068709567}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -9206,7 +9225,7 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!136 &2068709554
@@ -9412,6 +9431,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e58a635c43918a4fb895fce9510ec60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerStats
+--- !u!114 &2068709567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2068709551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 072c843ee916e5e4a91eac392875cd0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ExperienceCollector
+  baseAttractionRadius: 4
 --- !u!1 &2073716390
 GameObject:
   m_ObjectHideFlags: 0
