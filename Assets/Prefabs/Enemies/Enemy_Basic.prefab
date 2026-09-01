@@ -262,7 +262,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyVisualController
   animator: {fileID: 8472262111978522081}
   referenceMoveSpeed: 3
-  movementThreshold: 0.1
+  movementThreshold: 1
   animationDampTime: 0.1
   minAnimationSpeed: 0.5
   maxAnimationSpeed: 2
