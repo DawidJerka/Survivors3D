@@ -4,6 +4,7 @@ using UnityEngine;
 public class PlayerDamageReceiver : MonoBehaviour
 {
     [SerializeField] private float invulnerabilityDuration = 0.5f;
+    [SerializeField] private AudioSource hitAudioSource;
 
     private Health health;
     private float invulnerabilityTimer;
@@ -37,6 +38,8 @@ public class PlayerDamageReceiver : MonoBehaviour
         health.TakeDamage(damage);
 
         invulnerabilityTimer = invulnerabilityDuration;
+
+        hitAudioSource?.Play();
 
         Debug.Log(
             $"Player took {damage} damage. " +

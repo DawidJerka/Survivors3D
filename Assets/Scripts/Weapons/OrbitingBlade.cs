@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class OrbitingBlade : MonoBehaviour
 {
+    [SerializeField] private AudioSource hitAudioSource;
     private float damage;
 
     private readonly HashSet<Health> hitEnemies = new();
@@ -29,6 +30,7 @@ public class OrbitingBlade : MonoBehaviour
             return;
 
         health.TakeDamage(damage);
+        hitAudioSource?.Play();
     }
 
     private void OnTriggerExit(Collider other)

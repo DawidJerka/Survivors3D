@@ -6,6 +6,7 @@ public class Projectile : MonoBehaviour
     [SerializeField] private float speed = 10f;
     [SerializeField] private float lifetime = 5f;
     [SerializeField] private float damage = 25f;
+    [SerializeField] private GameObject impactSfxPrefab;
 
     private Rigidbody rb;
     private bool hasHit;
@@ -42,6 +43,15 @@ public class Projectile : MonoBehaviour
         hasHit = true;
 
         health.TakeDamage(damage);
+
+        if (impactSfxPrefab != null)
+        {
+            Instantiate(
+                impactSfxPrefab,
+                transform.position,
+                Quaternion.identity
+            );
+        }
 
         Destroy(gameObject);
     }
