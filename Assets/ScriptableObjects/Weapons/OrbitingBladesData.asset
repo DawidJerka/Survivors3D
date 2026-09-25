@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: OrbitingBladesData
   m_EditorClassIdentifier: Assembly-CSharp::OrbitingBladesData
   displayName: Orbiting Blades
-  icon: {fileID: 21300000, guid: 1fe92cdc749a78d408aaca2c750d3b83, type: 3}
+  icon: {fileID: 21300000, guid: 77ceabe855b86064cb73446fef595901, type: 3}
   maxLevel: 5
   weaponPrefab: {fileID: 8721677747872675983, guid: 09af597bbf912a048bf5dcc090ec8d07, type: 3}
   baseBladeCount: 2

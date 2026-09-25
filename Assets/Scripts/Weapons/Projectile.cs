@@ -7,6 +7,7 @@ public class Projectile : MonoBehaviour
     [SerializeField] private float lifetime = 5f;
     [SerializeField] private float damage = 25f;
     [SerializeField] private GameObject impactSfxPrefab;
+    [SerializeField] private GameObject impactVfxPrefab;
 
     private Rigidbody rb;
     private bool hasHit;
@@ -44,6 +45,17 @@ public class Projectile : MonoBehaviour
 
         health.TakeDamage(damage);
 
+        Vector3 hitPosition = other.ClosestPoint(transform.position);
+
+        if (impactVfxPrefab != null)
+        {
+            Instantiate(
+                impactVfxPrefab,
+                hitPosition,
+                Quaternion.identity
+            );
+        }
+
         if (impactSfxPrefab != null)
         {
             Instantiate(
@@ -51,6 +63,17 @@ public class Projectile : MonoBehaviour
                 transform.position,
                 Quaternion.identity
             );
+        }
+
+        Vector3 hitDirection = rb.linearVelocity.normalized;
+
+
+        EnemyHitFeedback hitFeedback =
+            other.GetComponentInParent<EnemyHitFeedback>();
+
+        if (hitFeedback != null)
+        {
+            hitFeedback.PlayHit(hitDirection);
         }
 
         Destroy(gameObject);

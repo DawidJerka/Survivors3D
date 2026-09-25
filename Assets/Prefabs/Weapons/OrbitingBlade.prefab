@@ -4997,6 +4997,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OrbitingBlade
   hitAudioSource: {fileID: 8488121174798857855}
+  impactVfxPrefab: {fileID: 6987786691789946867, guid: 6fc4cff0c59d5b94096b09b372c785c9, type: 3}
 --- !u!82 &8488121174798857855
 AudioSource:
   m_ObjectHideFlags: 0

@@ -7,6 +7,7 @@ public class OrbitingBlade : MonoBehaviour
     private float damage;
 
     private readonly HashSet<Health> hitEnemies = new();
+    [SerializeField] private GameObject impactVfxPrefab;
 
     public void Initialize(float damage)
     {
@@ -29,7 +30,31 @@ public class OrbitingBlade : MonoBehaviour
         if (!hitEnemies.Add(health))
             return;
 
+        Vector3 hitPosition =
+            other.ClosestPoint(transform.position);
+
+        Vector3 hitDirection =
+            (other.transform.position - transform.position).normalized;
+
+        EnemyHitFeedback hitFeedback =
+            other.GetComponentInParent<EnemyHitFeedback>();
+
         health.TakeDamage(damage);
+
+        if (hitFeedback != null)
+        {
+            hitFeedback.PlayHit(hitDirection);
+        }
+
+        if (impactVfxPrefab != null)
+        {
+            Instantiate(
+                impactVfxPrefab,
+                hitPosition,
+                Quaternion.identity
+            );
+        }
+
         hitAudioSource?.Play();
     }
 

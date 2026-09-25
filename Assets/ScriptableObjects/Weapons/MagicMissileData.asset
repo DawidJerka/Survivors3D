@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: MagicMissileData
   m_EditorClassIdentifier: Assembly-CSharp::MagicMissileData
   displayName: Magic Missile
-  icon: {fileID: 21300000, guid: 1fe92cdc749a78d408aaca2c750d3b83, type: 3}
+  icon: {fileID: 21300000, guid: ddc527e4392740447a401e5bcf4f07a7, type: 3}
   maxLevel: 5
   weaponPrefab: {fileID: 1765067224896355366, guid: 56840e5a2fdb11a4697c4a5f6fa6e0d9, type: 3}
   baseAttackSpeed: 1

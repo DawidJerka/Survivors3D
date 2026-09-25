@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7981211903942656229}
   - component: {fileID: 444605422215650778}
   - component: {fileID: 8708839058026066551}
+  - component: {fileID: -4830291820986487552}
   - component: {fileID: 5104800868699890407}
   - component: {fileID: 4884193705229418475}
   - component: {fileID: 7804398846984799226}
@@ -176,6 +177,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Health
   maxHealth: 100
+--- !u!114 &-4830291820986487552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2571686004122013693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4f38010e64b4b644b6d37df9eec0d49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyHitFeedback
+  visualRoot: {fileID: 404101356896148696}
+  scaleMultiplier: 1.06
+  punchDuration: 0.07
 --- !u!114 &5104800868699890407
 MonoBehaviour:
   m_ObjectHideFlags: 0
