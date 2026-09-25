@@ -59,17 +59,17 @@ public class ExperienceGem : MonoBehaviour
         if (!other.CompareTag("Player"))
             return;
 
-        PlayerExperience playerExperience =
-            other.GetComponent<PlayerExperience>();
+        ExperienceCollector collector =
+            other.GetComponent<ExperienceCollector>();
 
-        if (playerExperience == null)
-            playerExperience =
-                other.GetComponentInParent<PlayerExperience>();
+        if (collector == null)
+            collector =
+                other.GetComponentInParent<ExperienceCollector>();
 
-        if (playerExperience == null)
+        if (collector == null)
             return;
 
-        playerExperience.AddExperience(experienceValue);
+        collector.CollectExperience(experienceValue);
 
         Destroy(gameObject);
     }
