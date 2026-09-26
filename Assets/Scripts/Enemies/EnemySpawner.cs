@@ -8,6 +8,8 @@ public class EnemySpawner : MonoBehaviour
 
     [Header("Spawning")]
     [SerializeField] private float spawnDistance = 20f;
+    [SerializeField] private ArenaBounds arenaBounds;
+    [SerializeField] private int spawnPositionAttempts = 20;
 
     private float spawnInterval = 1f;
     private int maxEnemies = 50;
@@ -63,10 +65,37 @@ public class EnemySpawner : MonoBehaviour
         damageMultiplier = Mathf.Max(0f, damage);
     }
 
+    private bool TryGetSpawnPosition(out Vector3 spawnPosition)
+    {
+        for (int i = 0; i < spawnPositionAttempts; i++)
+        {
+            Vector2 direction =
+                Random.insideUnitCircle.normalized;
+
+            Vector3 candidate =
+                player.position +
+                new Vector3(
+                    direction.x,
+                    0f,
+                    direction.y
+                ) * spawnDistance;
+
+            if (arenaBounds == null ||
+                arenaBounds.Contains(candidate))
+            {
+                spawnPosition = candidate;
+                return true;
+            }
+        }
+
+        spawnPosition = default;
+        return false;
+    }
     private void SpawnEnemy()
     {
         if (aliveEnemies >= maxEnemies)
             return;
+            
 
         GameObject enemyPrefab =
             GetRandomEnemyPrefab();
@@ -85,6 +114,10 @@ public class EnemySpawner : MonoBehaviour
                 randomDirection.y
             ) * spawnDistance;
 
+        
+        if (!TryGetSpawnPosition(out spawnPosition))
+            return;
+        
         GameObject enemy = Instantiate(
             enemyPrefab,
             spawnPosition,
